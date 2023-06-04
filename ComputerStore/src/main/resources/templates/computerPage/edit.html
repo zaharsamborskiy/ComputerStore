@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Обновить компьютер</title>
+</head>
+<body>
+<form th:method="PATCH" th:action="@{/computer/{id}(id=${computer.getId()})}" th:object="${computer}">
+  <label for="type">Тип:</label>
+  <select th:field="*{type}" id="type">
+    <option th:each="type : ${T(ru.samborskiy.store.model.Enums.SelectComputerEnum).values()}"
+            th:value="${type}"
+            th:text="${type}">type</option>
+  </select>
+  <div th:object="${req}">
+    <label for="serialNumber">Серийный номер:</label>
+    <input type="text" th:field="*{serialNumber}" id="serialNumber"/>
+    <label for="producer">Производитель:</label>
+    <input type="text" th:field="*{producer}" id="producer"/>
+    <label for="price">Цена:</label>
+    <input type="text" th:field="*{price}" id="price"/>
+    <label for="amount">Количество на складе:</label>
+    <input type="text" th:field="*{amount}" id="amount"/>
+  </div>
+  <br/>
+  <input type="submit" value="Обновить">
+</form>
+
+
+
+</body>
+</html>

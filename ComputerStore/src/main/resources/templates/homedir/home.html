@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Магазин компьютерной техники</title>
+</head>
+<body>
+    <div style="text-align: center"><h1>Приветствую тебя, выбери категорию</h1></div>
+        <div style="text-align: center">
+            <a th:href="@{/computer}"><h2>Компьютеры</h2></a>
+            <a th:href="@{/laptop}"><h2>Ноутбуки</h2></a>
+            <a th:href="@{/hardDisk}"><h2>Жесткие диски</h2></a>
+            <a th:href="@{/monitor}"><h2>Мониторы</h2></a>
+        </div>
+</body>
+</html>

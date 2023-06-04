@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Обновить монитор</title>
+</head>
+<body>
+<form th:method="PATCH" th:action="@{/monitor/{id}(id=${monitor.getId()})}" th:object="${monitor}">
+  <label for="diagonal">Диагональ:</label>
+  <input type="text" th:field="*{diagonal}" id="diagonal"/>
+  <div th:object="${req}">
+    <label for="serialNumber">Серийный номер:</label>
+    <input type="text" th:field="*{serialNumber}" id="serialNumber"/>
+    <label for="producer">Производитель:</label>
+    <input type="text" th:field="*{producer}" id="producer"/>
+    <label for="price">Цена:</label>
+    <input type="text" th:field="*{price}" id="price"/>
+    <label for="amount">Количество на складе:</label>
+    <input type="text" th:field="*{amount}" id="amount"/>
+  </div>
+  <br/>
+  <input type="submit" value="Обновить">
+</form>
+
+</body>
+</html>

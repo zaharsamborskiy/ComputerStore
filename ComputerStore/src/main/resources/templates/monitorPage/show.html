@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Монитор</title>
+</head>
+<body>
+<p th:text="${properties.toString()}">value</p>
+<br/>
+<hr/>
+<a th:href="@{/monitor/{id}/edit(id=${monitor.getId()})}">Изменить</a>
+<form th:method="DELETE" th:action="@{/monitor/{id}(id=${monitor.getId()})}">
+  <input type="submit" value="Удалить">
+</form>
+</body>
+</html>
